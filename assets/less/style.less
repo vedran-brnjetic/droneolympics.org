@@ -1,0 +1,431 @@
+// out: ../style.css, compress: true, strictMath: false
+
+@import url('reset.less');
+
+/* COLORS & FONTS */
+
+@basefontsize: 14px;
+@black: #090909;
+@white: #ffffff;
+@red: #ff2439;
+@gray: #1a1a1a;
+@lightgray: #8f8f8f;
+
+.font(@size:@basefontsize, @lineheight, @fontfam, @fontcolor: @black) {
+    font-size: @size * 1px;
+    line-height: @lineheight *1px;
+    color: @fontcolor;
+    font-family: @fontfam, Sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+        color: @white;
+    }
+}
+
+
+/* BASIC STYLES */
+
+::-moz-selection { background-color: #fff3c7; }
+::selection { background-color: #fff3c7; }
+
+.clear() {
+  &:after {
+    content: ' ';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.animate(@speed:0.25s) { transition: all @speed ease; }
+.notextdecoration () { text-decoration: none; }
+
+.noselect() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    background: @gray;
+    margin: 0;
+    height: 100%;
+    .font(14,20,Poppins,@white);
+}
+
+strong {
+    font-weight: 600;
+}
+
+body, html { height: 100%; -webkit-font-smoothing: antialiased; }
+
+
+
+/*
+    STYLES
+*/
+
+h2 {
+    .font(54,62,Poppins,@red);
+    font-weight: 600;
+    margin: 0 auto 40px auto;
+}
+
+h3 {
+    .font(24,32,Poppins,@red);
+    font-weight: 600;
+}
+
+h4 {
+    .font(20,24,Poppins,@lightgray);
+    font-weight: 600;
+}
+
+p.lead {
+    .font(18,26,Poppins,@white);
+}
+
+p.big-lead {
+    .font(34,42,Poppins,@white);
+}
+
+section {
+    padding: 120px 15%;
+    text-align: center;
+}
+
+a.btn {
+    width: 280px;
+    height: 34px;
+    .font(14,14,Poppins,@white);
+    display: block;
+    background: url('images/btn-red.svg') no-repeat;
+    text-decoration: none;
+    font-weight: 600;
+    padding-top: 18px;
+    overflow: hidden;
+    .animate();
+    &.gray {
+        background: url('images/btn-gray.svg') no-repeat;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+#hero {
+    background: url('images/bg-hero.jpg') no-repeat center;
+    background-size: cover;
+    padding-top: 50px;
+    h1 {
+        background: url('images/logo.svg') no-repeat;
+        background-size: contain;
+        width: 95px;
+        height: 130px;
+        text-indent: -9999px;
+        display: block;
+        margin: 0 auto 140px auto;
+    }
+    .big-lead {
+        margin-bottom: 50px;
+    }
+    .links {
+        width: 560px;
+        margin: 0 auto 140px;;
+        a {
+            float: left;
+            &.red {
+                margin-left: -10px !important;
+            }
+        }
+        .clear();
+    }
+    .madepossible {
+        width: 190px;
+        height: 43px;
+        display: block;
+        text-indent: -9999px;
+        margin: 0 auto;
+        background: url('images/madepossibleby.svg') no-repeat;
+        .animate();
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+#challenges {
+    padding: 120px 0;
+    h2 {
+        max-width: 640px;
+        margin: 0 auto 40px auto;
+    }
+    .lead {
+        max-width: 700px;
+        margin: 0 auto 60px auto;
+    }
+    .listing {
+        width: 100%;
+        height: 580px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        .cards {
+            width: ( 8*300px );
+            padding-left: 60px;
+        }
+        .one-challenge {
+            width: 190px;
+            background: @white;
+            color: @black;
+            padding: 40px 40px 0 40px;
+            float: left;
+            margin: 0 30px 0 0;
+            h3 {
+                margin-bottom: 20px;
+                font-size: 18px;
+                line-height: 24px;
+            }
+            a {
+                position: relative;
+                top: 20px;
+                margin-top: 10px;
+                margin-left: -44px;
+            }
+        }
+    }
+}
+
+#partners {
+    background: url('images/bg-partners.jpg') no-repeat;
+    background-size: cover;
+    h2 { color: @white; }
+    .lead {
+        margin-bottom: 60px;
+    }
+    .partners-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 60px;
+        a {
+            width: 180px;
+            height: 105px;
+            background: @white;
+            margin: 0 20px 20px 0;
+            line-height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .animate();
+            &:hover {
+                opacity: 0.8;
+            }
+            img {
+                max-width: 120px;
+                max-height: 80px;
+            }
+        }
+    }
+}
+
+.join-as-partner {
+    background: @black;
+    width: 80%;
+    margin: -100px auto 0 auto;
+    text-align: center;
+    padding: 90px 5%;
+    .lead { margin-bottom: 50px; }
+    h3 {
+        margin-bottom: 35px;
+    }
+    .packages {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .one-package {
+        float: left;
+        width: 25%;
+        text-align: left;
+        margin-right: 8%;
+        h4 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: circle;
+            li {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+footer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+    color: @lightgray;
+    .clear();
+    font-size: 12px;
+    line-height: 18px;
+    a {
+        text-decoration: none;
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+        a {
+            width: 20px;
+            height: 20px;
+            display: block;
+            text-indent: -9999px;
+            float: left;
+            margin-left: 15px;
+            .animate();
+            &:hover {
+                opacity: 0.5;
+            }
+            &.facebook {
+                background: url('images/some-fb.svg') no-repeat center center;
+                background-size: contain;
+            }
+            &.instagram {
+                background: url('images/some-ig.svg') no-repeat center center;
+                background-size: contain;
+            }
+            &.twitter {
+                background: url('images/some-twitter.svg') no-repeat center center;
+                background-size: contain;
+            }
+            &.youtube {
+                background: url('images/some-youtube.svg') no-repeat center center;
+                background-size: contain;
+            }
+            &.linkedin {
+                background: url('images/some-linkedin.svg') no-repeat center center;
+                background-size: contain;
+            }
+        }
+    }
+}
+
+
+/*
+    RESPONSIVE
+*/
+
+
+@media screen and (max-width: 768px) {
+
+    .partners-list {
+        a {
+            width: 120px !important;
+            height: 85px !important;
+            img {
+                max-width: 100px !important;
+                max-height: 70px !important;
+            }
+        }
+    }
+    
+    footer {
+        .left, .right { float: none; text-align: left; }
+        .right { margin-top: 25px; }
+        .right a {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 599px) {
+
+    .big-lead {
+        font-size: 24px !important;
+        line-height: 36px !important;
+    }
+    
+    .lead {
+        font-size: 18px !important;
+        line-height: 28px !important;
+    }
+    
+    h2 {
+        font-size: 36px !important;
+        line-height: 42px !important;
+    }
+    
+    section {
+        padding: 80px 10%;
+    }
+    
+    #hero {
+        h1 {
+            margin-bottom: 50px;
+        }
+        .links {
+            margin: 0 auto 60px auto;
+            width: 280px;
+            a {
+                float: none;
+            }
+        }
+    }
+    
+    #challenges {
+        padding: 80px 0;
+        h2, .lead {
+            width: 70%;
+        }
+    }
+    
+    .partners-list {
+        a {
+            width: 80px !important;
+            height: 65px !important;
+            margin: 0 10px 10px 0 !important;
+            img {
+                max-width: 70px !important;
+                max-height: 55px !important;
+            }
+        }
+    }
+    
+    .cards {
+        padding-left: 20px !important;
+    }
+    
+    .join-as-partner {
+        padding: 50px 5% 10px 5%;
+        .lead {
+            font-size: 14px !important;
+            line-height: 24px !important;
+        }
+        .packages {
+            .one-package {
+                float: none;
+                width: 100% !important;
+                margin-bottom: 40px;
+                margin-right: 0 !important;
+            }
+        }
+    }
+    
+    footer .left {
+        font-size: 10px !important;
+    }
+
+}
