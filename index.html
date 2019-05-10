@@ -41,6 +41,13 @@
             <a href="https://ultrahack.org/droneolympics2019" class="btn">Read more &amp; join the challenge</a>
         </div>
         <div class="one-challenge">
+            <h3>Drone mission: “In-Cloud Icing Performance Tests in the VTT Icing Wind Tunnel” by VTT</h3>
+            <p>How drones can operate in the in-cloud icing conditions during the winter?</p>
+            <p>Test A) Drone´s operational performance in icing conditions</p>
+            <p>Test B) Battery tests in the cold conditions</p>
+            <a href="https://ultrahack.org/droneolympics2019" class="btn">Read more &amp; join the challenge</a>
+        </div>
+        <div class="one-challenge">
             <h3>Search and rescue mission by Police and Rescue Department</h3>
             <p>Details to be announced</p>
             <a href="https://ultrahack.org/droneolympics2019" class="btn">Read more &amp; join the challenge</a>
@@ -81,14 +88,16 @@
     <p class="lead wow fadeInUp">We are proudly to present the best partners in the drone & UAV industries, who are bringing their technology and knowledge together to make the Drone Olympics happen.</p>
     <div class="partners-list">
         <a href="https://www.infradex.com"><img src="assets/images/partners/infradex.jpg" alt="" /></a>
-        <a href="https://www.vaisala.com/en"><img src="assets/images/partners/vaisala.png" alt="" /></a>
+        <a href="https://www.vtt.fi"><img src="assets/images/partners/vtt.png" alt="VTT Research" title="VTT Research" /></a>
         <a href="http://www.uasfinland.eu"><img src="assets/images/partners/uas.png" alt="" /></a>
         <a href="http://www.rpas.fi"><img src="assets/images/partners/rpas.png" alt="" /></a>
         <a href="https://www.dji.com"><img src="assets/images/partners/dji.jpg" alt="" /></a>
         <a href="https://en.ilmatieteenlaitos.fi"><img src="assets/images/partners/fmi.jpg" alt="" /></a>
         <a href="https://www.dronefactory.fi"><img src="assets/images/partners/dronefactory.png" alt="" /></a>
-        <a href="https://www.poliisi.fi"><img src="assets/images/partners/poliisi.png" alt="" /></a>
-        <a href="https://www.lup.fi/"><img src="assets/images/partners/lansi-uudenmaan.png" alt="" /></a>
+        <a href="https://www.poliisi.fi"><img src="assets/images/partners/poliisi-new.png" alt="" /></a>
+        <!--<a href="https://www.kympe.fi/"><img src="assets/images/partners/kympe.png" alt="" /></a>-->
+        <a href="https://www.kympe.fi/"><img src="assets/images/partners/kympe-new.jpg" alt="" /></a>
+        <a href="https://www.lup.fi/"><img src="assets/images/partners/LUP.jpg" alt="" /></a>
         <a href="https://www.hel.fi/helsinki/en"><img src="assets/images/partners/helsinki.png" alt="" /></a>
         <a href="https://www.espoo.fi/en-US"><img src="assets/images/partners/espoo.png" alt="" /></a>
         <a href="https://www.maanmittauslaitos.fi/en/research"><img src="assets/images/partners/nls.svg" alt="" /></a>
@@ -154,6 +163,10 @@
 <script src="assets/js/wow.js" type="text/javascript"></script>
 
 <script>
+  $(document).ready(function(){
+    $('a[href*="#"]').click((e)=>{e.preventDefault();});
+  });
+
   new WOW().init();
   var scroll = new SmoothScroll('a[href*="#"]');
 </script>
