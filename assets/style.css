@@ -10,3 +10,18 @@ h2>small {
   position: relative;
   top: -2em;
 }
+
+
+#prizes ul{
+  text-align: left;
+}
+
+#schedule ul{
+  text-align: right;
+}
+
+ul li{
+  line-height: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
